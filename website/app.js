@@ -64,9 +64,10 @@ generateButton.addEventListener("click", () => {
       return getStoredData();
     })
     .then((data) => {
-      document.getElementById("date").textContent = data.date;
-      document.getElementById("temp").textContent = data.temperature;
-      document.getElementById("content").textContent = data.userResponse;
+      document.getElementById("date").innerHTML = data.date;
+      document.getElementById("temp").innerHTML =
+        Math.round(allData.temp) + "degrees";
+      document.getElementById("content").innerHTML = data.userResponse;
     })
     .catch((err) => {
       console.log(err);
