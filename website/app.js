@@ -65,8 +65,9 @@ generateButton.addEventListener("click", () => {
     })
     .then((data) => {
       document.getElementById("date").innerHTML = data.date;
-      document.getElementById("temp").innerHTML =
-        Math.round(allData.temp) + "degrees";
+      document.getElementById("temp").innerHTML = `${Math.round(
+        parseInt(data.temperature)
+      )} degrees`;
       document.getElementById("content").innerHTML = data.userResponse;
     })
     .catch((err) => {
